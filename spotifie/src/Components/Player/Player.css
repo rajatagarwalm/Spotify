@@ -1,0 +1,9 @@
+.playerContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.player{
+    align-self: center;
+    width: 90%;
+}

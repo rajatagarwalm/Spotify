@@ -1,0 +1,35 @@
+.column {
+    margin-top: 20px;
+    float: left;
+    width: 31.5%;
+    padding: 0 10px;
+    margin-bottom:  20px;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 90%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.card:hover{
+    background-color: antiquewhite;
+}
+
+.cardTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}

@@ -1,0 +1,25 @@
+.singleRow{
+    border-bottom: 1px solid #5265c4;
+    margin: 10px;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.title{
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.artist{
+    color: rgb(53, 52, 52);
+    margin-left: 10px;
+    font-size: x-small;
+}
+
+.singleRow:hover{
+    background-color: antiquewhite;
+    margin: 2px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
