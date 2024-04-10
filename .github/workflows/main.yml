@@ -1,0 +1,43 @@
+name: Build and Push Docker Image to ECR
+'on':
+  push:
+    branches:
+      - main
+jobs:
+  build_and_push_image:
+    name: Build and Push Docker Image
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: '${{ secrets.DOCKER_USERNAME }}'
+          password: '${{ secrets.DOCKER_PASSWORD }}'
+      - name: Get Git commit hash
+        run: echo "VERSION=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: Build and push backend Docker image
+        run: >
+          docker build -t spotify-backend:${{ env.VERSION }} -f dockerfile
+          --target backend .
+
+          docker tag spotify-backend:${{ env.VERSION }} ${{
+          secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION
+          }}.amazonaws.com/${{ secrets.ECR_REPO_NAME }}:server_${{ env.VERSION }}
+
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{
+          secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_ECR_REPO_NAME }}:${{
+          env.VERSION }}
+      - name: Build and push frontend Docker image
+        run: >
+          docker build -t spotify-frontend:${{ env.VERSION }} -f dockerfile
+          --target frontend .
+
+          docker tag spotify-frontend:${{ env.VERSION }} ${{
+          secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION
+          }}.amazonaws.com/${{ secrets.ECR_ECR_REPO_NAME }}:frontend_${{ env.VERSION }}
+
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{
+          secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO_NAME }}:${{
+          env.VERSION }}
