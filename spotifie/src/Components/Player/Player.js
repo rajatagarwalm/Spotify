@@ -1,5 +1,4 @@
 import React from "react"
-import { Fragment } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import './Player.css';
 

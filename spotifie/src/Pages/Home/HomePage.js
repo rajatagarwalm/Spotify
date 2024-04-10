@@ -9,7 +9,6 @@ import evergreen from "../../Assets/evergreen.jpg"
 import featuredPlaylists from "../../Assets/featuredPlaylist.jpg"
 import { login } from "../../Services/LoginService";
 import { useNavigate } from "react-router-dom";
-import { getfeaturedPlaylists } from "../../Services/FeaturedPlaylistsService";
 import store from '../../Store/Store';
 import { FEATURED_PLAYLISTS, FEATURED_PLAYLISTS_SONGS, NEW_RELEASE_SONGS, SET_USER_LOGOUT, USER_DETAILS } from "../../Store/Type";
 

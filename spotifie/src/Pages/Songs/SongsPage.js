@@ -56,6 +56,8 @@ const SongsPage = () => {
                 storeSongsInRedux(playlistSongs);
                 setIsLoading(false);
                 break;
+            default: 
+                break;
         }
         setSongs(store.getState().authReducer.featuredPlaylistsSongs)
     }

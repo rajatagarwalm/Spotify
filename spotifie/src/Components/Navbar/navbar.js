@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Navbar.Module.css";
+import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FEATURED_PLAYLISTS, FEATURED_PLAYLISTS_SONGS, NEW_RELEASE_SONGS, SET_USER_LOGOUT, USER_DETAILS } from '../../Store/Type';

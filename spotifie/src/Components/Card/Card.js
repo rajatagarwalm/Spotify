@@ -1,9 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Card.css"
-import { getevergreenSongs, getNewReleaseSongs, getPlaylistsSongsByUrl, getpunjabiSongs } from "../../Services/SongsService";
-import { FEATURED_PLAYLISTS_SONGS, NEW_RELEASE_SONGS } from "../../Store/Type";
-import store from "../../Store/Store";
 
 const Card = (props) => {
 

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
-import store from "../../Store/Store";
 import './AdminPage.css'
 import empty from "../../Assets/empty.jpg"
 import { getAllFeedbacks } from "../../Services/FeedbackService";
 import LoadingSpinner from "../../Components/Spinner/Spinner";
-import { USER_FEEDBACKS } from "../../Store/Type";
 
 const AdminPage = () => {
 

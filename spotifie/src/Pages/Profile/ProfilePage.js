@@ -15,7 +15,9 @@ const Profile = () => {
     }
 
     useEffect(() => {
+        setIsLoading(true)
         fetchUserDetailsData();
+        setIsLoading(false)
     }, [])
 
     return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import './FeedbackPage.css';
-import { getAllFeedbacks, postFeedback } from "../../Services/FeedbackService";
+import { postFeedback } from "../../Services/FeedbackService";
 import LoadingSpinner from "../../Components/Spinner/Spinner";
 
 const Feedback = () => {
