@@ -1,5 +1,5 @@
 # Stage 1: Build the backend server
-FROM node:14 AS backend
+FROM node:latest AS backend
 
 # Set the working directory for the backend
 WORKDIR /usr/server/app
@@ -20,7 +20,7 @@ EXPOSE 3001
 CMD ["npm", "start"]
 
 # Stage 2: Build the frontend application
-FROM node:14 AS frontend
+FROM node:latest AS frontend
 
 # Set the working directory for the frontend
 WORKDIR /usr/spotify/app
