@@ -1,5 +1,5 @@
 # Stage 1: Build the backend server
-FROM node:latest AS backend
+FROM alpine:latest AS backend
 
 # Set the working directory for the backend
 WORKDIR /usr/server/app
